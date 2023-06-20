@@ -1,0 +1,42 @@
+GET http://localhost:3000/getQueryAndParam/1?haha='hehe'
+Content-Type: application/json
+
+{
+}
+
+####
+POST http://localhost:3000/postQuery/1
+Content-Type: application/json
+
+{
+  "value": true,
+  "qx": 123
+}
+
+###
+GET http://localhost:3000/userState
+Content-Type: application/json
+
+{}
+
+###
+GET http://localhost:3000/docs?version=1
+Content-Type: application/json
+
+{}
+
+###
+# when you build related table, the column like 'create_by' in here,
+# which value is corresponding with the 'createById' which typeorm create for us
+# 'createById' means user id in 'user' Table
+POST http://localhost:3000/tags
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Trucker",
+  "update_time": 2023,
+  "create_time": 2022,
+  "state": 1,
+  "create_by": 1
+}
