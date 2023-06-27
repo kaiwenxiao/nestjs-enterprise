@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { TagsModule } from './modules/tags/tags.module';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './modules/user/user.module';
+import { ArticleModule } from "./modules/article/article.module";
 
 @Module({
-  imports: [CoreModule, TagsModule, UserModule],
+  imports: [CoreModule, TagsModule, UserModule, ArticleModule],
   controllers: [AppController],
   // 1.
   // providers: [AppService],

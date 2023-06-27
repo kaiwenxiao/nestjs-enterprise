@@ -17,6 +17,7 @@ export class TagsService {
   ) {}
 
   getAll() {
+    // relations - left join
     return this.tagRepository.find({ relations: ['create_by'] });
   }
 
