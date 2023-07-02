@@ -12,11 +12,14 @@ import {
   Redirect,
   Req,
   Res,
+  UseInterceptors,
 } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Request, Response } from 'express';
+import { HttpReqTransformInterceptor } from './interceptor/http-req.interceptor';
 
 @Controller()
+@UseInterceptors(new HttpReqTransformInterceptor<any>()) // 统一返回体
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
@@ -39,6 +42,7 @@ export class AppController {
   @Get('/getReq2')
   getReq2(
     @Req() request: Request,
+    // TODO
     @Res({ passthrough: true }) response: Response,
   ): any {
     // console.log('request', request);

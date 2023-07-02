@@ -7,7 +7,7 @@ import { User } from '../../entities/user.entity';
 import { Article } from '../../entities/article.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Tag, User, Article])],
+  imports: [TypeOrmModule.forFeature([Tag, User])],
   controllers: [TagsController],
   providers: [TagsService],
 })
